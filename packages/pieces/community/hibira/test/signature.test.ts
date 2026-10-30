@@ -2,11 +2,13 @@ import { createHmac } from 'crypto';
 import { signQuery, signatureMatches } from '../src/lib/common/signature';
 
 describe('signQuery', () => {
-  // The example from the Pusher HTTP API reference.
+  // The worked example from the Pusher HTTP API reference
+  // (https://pusher.com/docs/channels/library_auth_reference/rest-api/#worked-authentication-example).
+  // The key and secret are public documentation values, not credentials.
   test('matches the Pusher reference signature', () => {
     const qs = signQuery({
-      key: '278d425bdf160c739803',
-      secret: '7ad3773142a6692b25b8',
+      key: '278d425bdf160c739803', // ggignore
+      secret: '7ad3773142a6692b25b8', // ggignore
       method: 'POST',
       path: '/apps/3/events',
       query: {},
